@@ -1,0 +1,715 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1 style="color:#ff6a00">TRIDENTTO</h1>
+                                <h2>JEANS</h2>
+                                <p>Los mejores productos</p>
+                                <button type="button" class="btn btn-default get">Consiguelo ahora</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="~/Imagenes/home/girl1.jpg" class="girl img-responsive" alt="" />
+                                <img src="~/Imagenes/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1 style="color:#ff6a00">TRIDENTTO</h1>
+                                <h2>100% Garantizados</h2>
+                                <p>Los mejores productos</p>
+                                <button type="button" class="btn btn-default get">Consiguelo ahora</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="~/Imagenes/home/girl2.jpg" class="girl img-responsive" alt="" />
+                                <img src="~/Imagenes/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1 style="color:#ff6a00">TRIDENTTO</h1>
+                                <h2>TRIDENTTO </h2>
+                                <p>Los mejores productos..... bl</p>
+                                <button type="button" class="btn btn-default get">Consiguelo ahora</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="~/Imagenes/home/girl3.jpg" class="girl img-responsive" alt="" />
+                                <img src="~/Imagenes/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Categorias</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Hombres
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="sportswear" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="~/Maestros/Productos">Jeans</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Hombres
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="mens" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="#">TRIDENTTO</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>*@
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        MUJER
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="womens" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="#">TRIDENTTO</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Niños</a></h4>
+                            </div>
+                        </div>
+                     
+                    </div><!--/category-products-->
+
+                    <div class="brands_products">
+                        <!--brands_products-->
+                        <h2>Marcas</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#"> <span class="pull-right">(50)</span>TRIDENTTO</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+
+                    <div class="price-range">
+                        <!--price-range-->
+                        <h2>Rango de Precios</h2>
+                        <div class="well text-center">
+                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="250" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                            <b class="pull-left">$ 0</b> <b class="pull-right">$ 250</b>
+                        </div>
+                    </div><!--/price-range-->
+
+                    <div class="shipping text-center">
+                        <!--Evio-->
+                        <img src="~/Imagenes/home/shipping.jpg" alt="" />
+                    </div><!--/Envio-->
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">Nuestros Productos</h2>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Imagenes/home/product1.jpg" alt="" />
+                                    <h2>$75.000</h2>
+                                    <p>Jean Dama Generico</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>$75.000</h2>
+                                        <p>Jean Dama Generico</p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Imagenes/home/product2.jpg" alt="" />
+                                    <h2>$75.000</h2>
+                                    <p>Jean Dama Generico</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>$75.000</h2>
+                                        <p>Jean Dama Generico</p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Imagenes/home/product3.jpg" alt="" />
+                                    <h2>$75.000</h2>
+                                    <p>Jean Dama Generico</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar al carrito</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>$75.000</h2>
+                                        <p>Jean Dama Generico</p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Imagenes/home/product4.jpg" alt="" />
+                                    <h2>$75.000</h2>
+                                    <p>Jean Dama Generico</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>$75.000</h2>
+                                        <p>Jean Dama Generico</p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                    </div>
+                                </div>
+                                <img src="~/Imagenes/home/new.png" class="new" alt="" />
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Imagenes/home/product5.jpg" alt="" />
+                                    <h2>$75.000</h2>
+                                    <p>Jean Dama Generico</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to al carrito</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>$75.000</h2>
+                                        <p>Jean Dama Generico</p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                    </div>
+                                </div>
+                                <img src="~/Imagenes/home/sale.png" class="new" alt="" />
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Imagenes/home/product6.jpg" alt="" />
+                                    <h2>$75.000</h2>
+                                    <p>Jean Dama Generico</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>$75.000</h2>
+                                        <p>Jean Dama Generico</p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add a mis favoritos</a></li>
+                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add comparar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!--features_items-->
+
+                <div class="category-tab">
+                    <!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tshirt" data-toggle="tab">Hombre</a></li>
+                            <li><a href="#blazers" data-toggle="tab">Dama</a></li>
+                            <li><a href="#blazers" data-toggle="tab">Infantil</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tshirt">
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery1.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery2.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery3.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery4.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="blazers">
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery4.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery3.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery2.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery1.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="sunglass">
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery3.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery4.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery1.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery2.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="kids">
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery1.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery2.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery3.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery4.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="poloshirt">
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery2.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery4.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery3.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/Imagenes/home/gallery1.jpg" alt="" />
+                                            <h2>$75.000</h2>
+                                            <p>Jean Dama Generico</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/category-tab-->
+
+                <div class="recommended_items">
+                    <!--recommended_items-->
+                    <h2 class="title text-center">Productos recomendados</h2>
+
+                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="~/Imagenes/home/recommend1.jpg" alt="" />
+                                                <h2>$75.000</h2>
+                                                <p>Jean Dama Generico</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="~/Imagenes/home/recommend2.jpg" alt="" />
+                                                <h2>$75.000</h2>
+                                                <p>Jean Dama Generico</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="~/Imagenes/home/recommend3.jpg" alt="" />
+                                                <h2>$75.000</h2>
+                                                <p>Jean Dama Generico</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="~/Imagenes/home/recommend1.jpg" alt="" />
+                                                <h2>$75.000</h2>
+                                                <p>Jean Dama Generico</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="~/Imagenes/home/recommend2.jpg" alt="" />
+                                                <h2>$75.000</h2>
+                                                <p>Jean Dama Generico</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="~/Imagenes/home/recommend3.jpg" alt="" />
+                                                <h2>$75.000</h2>
+                                                <p>Jean Dama Generico</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add al carrito</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--/recommended_items-->
+
+            </div>
+        </div>
+    </div>
+</section>

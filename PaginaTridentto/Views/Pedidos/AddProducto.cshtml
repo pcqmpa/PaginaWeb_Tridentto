@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "AddProducto";
+}
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <!--Imagen-->
+            <figure>
+                <img src="~/Imagenes/shop/product10.jpg" width="250" height="310" aling="middle" />
+            </figure>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2>NOMBRE DEL PRODUCTO</h2>
+                    <h4>Ref:<span>800266</span></h4>
+                    <div class="row">
+                        <h5>Precio</h5>
+                        <p>$52.500</p>
+                    </div>
+                    <div class="row">
+                        <h5>Seleccione la Talla</h5>
+                         <!--Listado de Tallas-->
+                        <ul class="ul-items-colores-maproducto">
+                            <li>
+                                <input type="radio" id="rd-talla1"/>
+                                <label for="rd-talla1">8</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <h5>Seleccione el Color</h5>
+                        <ul>
+                            <li>
+                                <input type="radio" id="rd-color1" />
+                                <label id="rd-color1">
+                                    <span class="color-item-maproductos"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h5>Cantidad</h5>
+                            <a href="#"><span class="glyphicon glyphicon-plus"></span></a>
+                            <input type="text" value="1" name="numCantidad" />
+                            <a href="#"><span class="glyphicon glyphicon-minus"></span></a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#">Añadir al Carro</a>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="col-sm-5">
+                    <div class="row">
+                        <h5>Comparte este producto con tus contactos</h5>
+                        <ul>
+                            <li>faceboock</li>
+                            <li>tweeter</li>
+                            <li>google</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <h2>DESCRIPCION Y/O INFORMACION DEL PRODUCTO</h2>
+                        <p>Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Productos similares</h2>
+            <div id="similar-product" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href=""><img src="~/Imagenes/product-details/similar1.jpg" alt=""></a>
+                        <a href=""><img src="~/Imagenes/product-details/similar2.jpg" alt=""></a>
+                        <a href=""><img src="~/Imagenes/product-details/similar3.jpg" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img src="~/Imagenes/product-details/similar1.jpg" alt=""></a>
+                        <a href=""><img src="~/Imagenes/product-details/similar2.jpg" alt=""></a>
+                        <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img src="~/Imagenes/product-details/similar1.jpg" alt=""></a>
+                        <a href=""><img src="~/Imagenes/product-details/similar2.jpg" alt=""></a>
+                        <a href=""><img src="~/Imagenes/product-details/similar3.jpg" alt=""></a>
+                    </div>
+                </div>
+
+                <a class="left item-control" href="#similar-product" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right item-control" href="#similar-product" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+           </div>
+    </div>
+</section>
+

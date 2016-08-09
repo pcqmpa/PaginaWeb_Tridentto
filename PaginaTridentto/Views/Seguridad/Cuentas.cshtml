@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Cuentas";
+}
+
+@section css{
+
+        
+        <link href="~/Content/Seguridad.css" rel="stylesheet" />
+
+    }
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="titulo-cuenta">Cuenta|<span id="txt-nombre-usuario-cuenta">Paulo Cesar Quintero</span></h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <ul class="menu-cuenta">
+                <li><a href="#" class="active">MI CUENTA</a></li>
+                <li><a href="~/Seguridad/OrdenesUsuario">MIS ORDENES <span>(2)</span></a></li>
+                <li><a href="~/Seguridad/Direcciones">MIS DIRECCIONES(2)</a></li>
+                <li><a href="#">CERRAR SESSION</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-10">
+            <form action="" method="post">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Usuario" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nombre de Usuario" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="0" class="active" disabled="disabled">Seleccione un Pais</option>
+                                <option>COLOMBIA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="0" class="active" disabled="disabled">Seleccione un Pais</option>
+                                <option>COLOMBIA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Telefono Fijo" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Mobil" />
+                        </div>
+                    </div>
+           
+                </div>
+             
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <button type="button" class="btn form-control btn-info">Cambio de Contraseña</button>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <button type="button" class="btn form-control btn-warning">No Actualizar</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn form-control btn-warning" disabled="disabled" >Actualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
