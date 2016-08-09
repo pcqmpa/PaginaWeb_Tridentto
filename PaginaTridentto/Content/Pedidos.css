@@ -326,3 +326,14 @@ input[type=checkbox]:checked + label:before {
         background-color:#ff5600;
         color:#fff;
     }
+
+/*Diseño Producto Pedido*/
+.div-contenerdor-addProducto {
+
+
+}
+
+    .div-contenerdor-addProducto h2 {
+        font-size:20px;
+
+    }
