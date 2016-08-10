@@ -328,12 +328,9 @@ input[type=checkbox]:checked + label:before {
     }
 
 /*Diseño Producto Pedido*/
-.div-contenerdor-addProducto {
-
-
+.div-divider-producto {
+    height:0;
+    border-top:1px solid #ec1000;
+    margin-top:20px;
+    margin-left:-15px;
 }
-
-    .div-contenerdor-addProducto h2 {
-        font-size:20px;
-
-    }

@@ -3,6 +3,11 @@
     ViewBag.Title = "AddProducto";
 }
 
+@section css{
+
+        <link href="~/Content/Pedidos.css" rel="stylesheet" />
+
+    }
 <section class="container">
     <div class="row">
         <div class="col-sm-3">
@@ -13,45 +18,65 @@
         </div>
         <div class="col-sm-9">
             <div class="row">
-                <div class="div-contenerdor-addProducto col-sm-7">
-                    <h2>NOMBRE DEL PRODUCTO</h2>
-                    <h4>Ref:<span>800266</span></h4>
-                    <div class="row">
-                        <h5>Precio</h5>
-                        <p>$52.500</p>
-                    </div>
-                    <div class="row">
-                        <h5>Seleccione la Talla</h5>
-                         <!--Listado de Tallas-->
-                        <ul class="ul-items-colores-maproducto">
-                            <li>
-                                <input type="radio" id="rd-talla1"/>
-                                <label for="rd-talla1">8</label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <h5>Seleccione el Color</h5>
-                        <ul>
-                            <li>
-                                <input type="radio" id="rd-color1" />
-                                <label id="rd-color1">
-                                    <span class="color-item-maproductos"></span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h5>Cantidad</h5>
-                            <a href="#"><span class="glyphicon glyphicon-plus"></span></a>
-                            <input type="text" value="1" name="numCantidad" />
-                            <a href="#"><span class="glyphicon glyphicon-minus"></span></a>
+                <div class="col-sm-7">
+                  
+                        <a href="#" class="titulo-producto-item">
+                            <h2 style="margin-left:-15px">Nombre del Producto</h2>
+                            <h3>Ref:052336</h3>
+                        </a>
+                        <div class="div-divider-producto"></div>
+                        <div class="row">
+                            <h5>Precio</h5>
+                            <h4 class="item-precio-carrito">$52.000</h4>
                         </div>
-                        <div class="col-sm-6">
-                            <a href="#">Añadir al Carro</a>
+                        <div class="row">
+                            <h5>Seleccione la Talla</h5>
+                            <!--Listado de Tallas-->
+                            <ul class="item-tallas-carrito">
+                                <li class="checkbox-propio">
+                                    <h5>Talla</h5>
+                                    <div class="checkbox-content">
+                                        <input id="check1" type="checkbox" name="check" value="check1" checked>
+                                        <label for="check1">s</label>
+                                    </div>
+                                </li>
+                                <li class="checkbox-propio">
+                                    <h5>Talla</h5>
+                                    <div class="checkbox-content">
+                                        <input id="check2" type="checkbox" name="check1" value="check1">
+                                        <label for="check2">m</label>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        
+                        <div class="row">
+                            <h5>Seleccione el Color</h5>
+                            <ul class="item-tallas-carrito">
+                                <li class="checkbox-propio">
+                                    <h5>Color</h5>
+                                    <div class="checkbox-content">
+                                        <input id="check2" type="checkbox" name="check-1" value="check1" checked>
+                                        <label for="check2">
+                                            <span class="color-producto-carrito"></span>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6" style="margin-left:-15px">
+                                <ul class="ul-cantidad-item-pedido">
+                                    <li class="info-cantidad">
+                                        <h5>Cantidad</h5>
+                                        <a href="#"><span class="glyphicon-plus"></span></a>
+                                        <input type="text" value="1" />
+                                        <a href="#"><span class="glyphicon-minus"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="#">Añadir al Carro</a>
+                            </div>
                     </div>
 
                 </div>
