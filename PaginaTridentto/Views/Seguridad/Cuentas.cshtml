@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Cuentas";
     var dpt = ViewData["departamentos"] as List<PaginaTridentto.Models.Departamentos>;
+    var paises = ViewData["paises"] as List<PaginaTridentto.Models.Paises>;
 }
 
 @section css{
@@ -11,8 +12,9 @@
 
     }
 
-@Html.Hidden("urlCiudades", Url.Action("Ciudades", "Seguridad"));
-
+@Html.Hidden("urlCiudades", Url.Action("Ciudades", "Seguridad"))
+@Html.Hidden("urlHome", Url.Action("Index", "Home"))
+@Html.Hidden("urlActualizar",Url.Action("AddOtrosDatosUsuario","Seguridad"))
 <section class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -35,20 +37,27 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Usuario" />
+                            <input type="text" class="form-control" placeholder="Usuario" value="@ViewBag.usuario" disabled />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nombre de Usuario" />
+                            <input type="text" class="form-control" placeholder="Nombre de Usuario" value="@ViewBag.nombre" disabled />
                         </div>
                         <div class="form-group">
-                            <select class="form-control">
-                                <option value="0" class="active" disabled="disabled">Seleccione un Pais</option>
-                                <option>COLOMBIA</option>
+                            <select class="form-control" id="list_pais">
+                                <option value="0" class="active" disabled selected>Seleccione un Pais</option>
+                                @if (paises != null)
+                                {
+                                    foreach (var item in paises)
+                                    {
+                                        <option value="@item.Id">@item.StrNombre</option>
+                                    }
+                                }
+                               
                             </select>
                         </div>
                         <div class="form-group">
                             <select class="form-control" id="list_dpt">
-                                <option value="0" class="active" disabled="disabled">Seleccione un Departamento</option>
+                                <option value="0" class="active" disabled selected>Seleccione un Departamento</option>
                                 @if (dpt != null)
                                 {
                                     foreach (var item in dpt)
@@ -62,16 +71,16 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <select id="list_ciudad" class="form-control">
-                                <option value="0" class="active" disabled="disabled">Seleccione una Ciudad</option>
+                            <select id="list_ciudad" class="form-control"  >
+                                <option value="0" class="active" disabled selected>Seleccione una Ciudad</option>
                                
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Telefono Fijo" />
+                            <input type="text" class="form-control" placeholder="Telefono Fijo" name="StrTelefono" id="StrTelefono" />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Mobil" />
+                            <input type="text" class="form-control" placeholder="Mobil" name="StrMobil" id="StrMobil" />
                         </div>
                     </div>
            
@@ -84,10 +93,10 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-6">
-                        <button type="button" class="btn form-control btn-warning">No Actualizar</button>
+                        <button type="button" class="btn form-control btn-warning" id="btn_noActualizar">No Actualizar</button>
                     </div>
                     <div class="col-md-6">
-                        <button type="button" class="btn form-control btn-warning" disabled="disabled" >Actualizar</button>
+                        <button type="button" class="btn form-control btn-warning" disabled id="btn-guardar" >Actualizar</button>
                     </div>
                 </div>
             </form>
@@ -104,6 +113,8 @@
 
             $("#list_dpt").change(function () {
                
+                $("#btn-guardar").removeAttr("disabled");
+
                 var xid = $(this).val();
                 var xurl = $("#urlCiudades").val();
 
@@ -143,7 +154,56 @@
 
             });
 
+
+            $("#btn_noActualizar").click(function () {
+                var urlHome = $("#urlHome").val();
+                window.location.href = urlHome;
+            });
+            
+            $("#StrTelefono").keypress(function () {
+                $("#btn-guardar").removeAttr("disabled");
+            });
            
+
+            $("#btn-guardar").click(function () {
+
+                var urlGuardar = $("#urlActualizar").val();
+                var modelo = {
+                    IdPais:0,
+                    IdDepartamento:0,
+                    IdCiudad:0,
+                    StrTelefono:'',
+                    StrMobil:''
+                }
+
+                modelo.IdPais = $("#list_pais").val();
+                modelo.IdDepartamento = $("#list_dpt").val();
+                modelo.IdCiudad = $("#list_ciudad").val();
+
+                modelo.StrTelefono = $("#StrTelefono").val();
+                modelo.StrMobil = $("#StrMobil").val();
+
+                $.ajax({
+                    url: urlGuardar,
+                    data: { IdPais: modelo.IdPais,IdDepartamento: modelo.IdDepartamento,IdCiudad:modelo.IdCiudad,StrTelefono: modelo.StrTelefono,StrMobil:modelo.StrMobil },
+                    type: "POST"
+                }).done(function (res) {
+
+                    if (res.Error != undefined)
+                    {
+                        Mensaje(res.Error,icono_mensaje.error, 'Cuenta de Usuario');
+                    } else {
+
+                        Mensaje(res.mensaje, icono_mensaje.ok, 'Cuenta de Usuario');
+
+                    }
+
+                }).fail(function (error) {
+                    alert(error.error);
+                });
+
+            });
+
 
         });
 

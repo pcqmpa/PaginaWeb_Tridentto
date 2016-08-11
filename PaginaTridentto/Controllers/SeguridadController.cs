@@ -58,6 +58,13 @@ namespace PaginaTridentto.Controllers
             var vc = new Clases.SeguridadDao();
             var datos = vc.ValidarUsuario(usuario, password, out _strMensaje);
 
+            Session["idUsuario"] = datos.Id;
+            Session["usuario"] = datos.StrUsuario;
+            Session["nombre"] = datos.StrNombre;
+            Session["email"] = datos.StrEmail;
+            Session["grupo"] = datos.IdGrupo;
+
+
             if (datos != null)
             {
                 return Json(new
@@ -77,16 +84,85 @@ namespace PaginaTridentto.Controllers
 
         public ActionResult Cuentas()
         {
-            /*Cargamos Los Departamentos Primero*/
+
+            /*Validamos si esta logueado si no lo redireccionamos al login*/
+
+
+            string usuario = Session["usuario"].ToString();
+
+            if (usuario != "")
+            {
+                /*Cargamos los paise*/
+
+                
+
+                /*Cargamos Los Departamentos Primero*/
+
+                var vc = new Clases.MaestrosDao();
+
+                var paises = vc.ListaPaises();
+                var dpt = vc.ListaDepartamentos();
+
+                ViewData["paises"] = paises;
+                ViewData["departamentos"] = dpt;
+
+                ViewBag.usuario = Session["usuario"].ToString();
+                ViewBag.nombre = Session["nombre"].ToString();
+
+
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Seguridad");
+            }
+
+            /*Fin*/
+
+
+        }
+        [HttpPost]
+        public ActionResult AddOtrosDatosUsuario(DatosComplemenatriosUsuario modelo)
+        {
 
             var vc = new Clases.MaestrosDao();
 
+            var paises = vc.ListaPaises();
             var dpt = vc.ListaDepartamentos();
 
+            ViewData["paises"] = paises;
             ViewData["departamentos"] = dpt;
 
-            return View();
+            ViewBag.usuario = Session["usuario"].ToString();
+            ViewBag.nombre = Session["nombre"].ToString();
+
+            /*Actualizamos la informacion*/
+
+            Int64 idUsuario =Convert.ToInt64(Session["idUsuario"]);
+
+            modelo.IdUsuario = idUsuario;
+
+            var res = vc.AddDatosComplementariosUsuario(modelo, out _strMensaje);
+
+            if (res)
+            {
+                return Json(new
+                {
+                    mensaje = _strMensaje
+
+                });
+            }
+            else
+            {
+                return Json(new
+                {
+                    Error = _strMensaje
+                });
+            }
+
+            
         }
+
 
         public ActionResult Direcciones()
         {

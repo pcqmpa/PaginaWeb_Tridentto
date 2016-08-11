@@ -10,6 +10,7 @@ namespace PaginaTridentto.Controllers
     {
         public ActionResult Index()
         {
+            Session["usuario"] = "";
             return View();
         }
 

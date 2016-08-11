@@ -83,6 +83,7 @@ namespace PaginaTridentto.Clases
                         {
                             var datos = new Usuario();
 
+                            datos.Id = Convert.ToInt64(dt.Rows[0]["id"]);
                             datos.StrUsuario = dt.Rows[0]["strUsuario"].ToString();
                             datos.StrNombre = dt.Rows[0]["strNombre"].ToString();
                             datos.IdGrupo = Convert.ToInt16(dt.Rows[0]["idGrupo"]);

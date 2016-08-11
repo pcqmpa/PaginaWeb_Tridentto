@@ -18,6 +18,42 @@ namespace PaginaTridentto.Clases
             _dataHelper = new DataHelper();
         }
 
+        public List<Paises> ListaPaises()
+        {
+            try
+            {
+                var dt = _dataHelper.EjecutarSp<DataTable>("ma_spListaPaises", null);
+
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        var lista = new List<Paises>();
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            lista.Add(new Paises { Id = Convert.ToInt16(dt.Rows[i]["id"]), StrNombre = dt.Rows[i]["strNombre"].ToString() });
+
+                        }
+
+                        return lista;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
 
         public List<Departamentos> ListaDepartamentos()
         {
@@ -98,6 +134,50 @@ namespace PaginaTridentto.Clases
 
                 return null;
             }
+        }
+
+        public bool AddDatosComplementariosUsuario(DatosComplemenatriosUsuario modelo,out string strMensaje)
+        {
+            try
+            {
+                var parametros = new List<MySqlParameter>()
+                {
+                    new MySqlParameter("usuario",modelo.IdUsuario),
+                    new MySqlParameter("pais",modelo.IdPais),
+                    new MySqlParameter("departamento",modelo.IdDepartamento),
+                    new MySqlParameter("ciudad",modelo.IdCiudad),
+                    new MySqlParameter("telefono",modelo.StrTelefono),
+                    new MySqlParameter("mobil",modelo.StrMobil)
+                };
+
+                var mensaje = new MySqlParameter("mensaje", MySqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
+                var log_respuesta = new MySqlParameter("log_respuesta", MySqlDbType.Bit) { Direction = ParameterDirection.Output };
+
+                parametros.Add(mensaje);
+                parametros.Add(log_respuesta);
+
+                var res = _dataHelper.EjecutarSp<int>("sg_spAddDatosComplementariosUsuario", parametros);
+
+                if (res >= 0)
+                {
+                    strMensaje = mensaje.Value.ToString();
+                    return Convert.ToBoolean(log_respuesta.Value);
+                }
+                else
+                {
+                    strMensaje = "No hay conexion con el servidor";
+                    return false;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                strMensaje = ex.Message;
+                return false;
+            }
+        
         }
     }
 }
