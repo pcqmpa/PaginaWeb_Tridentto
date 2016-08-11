@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Cuentas";
+    var dpt = ViewData["departamentos"] as List<PaginaTridentto.Models.Departamentos>;
 }
 
 @section css{
@@ -9,6 +10,8 @@
         <link href="~/Content/Seguridad.css" rel="stylesheet" />
 
     }
+
+@Html.Hidden("urlCiudades", Url.Action("Ciudades", "Seguridad"));
 
 <section class="container">
     <div class="row">
@@ -43,12 +46,25 @@
                                 <option>COLOMBIA</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <select class="form-control" id="list_dpt">
+                                <option value="0" class="active" disabled="disabled">Seleccione un Departamento</option>
+                                @if (dpt != null)
+                                {
+                                    foreach (var item in dpt)
+                                    {
+                                        <option value="@item.Id">@item.StrNombre</option>
+                                    }
+                                }
+
+                            </select>                          
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <select class="form-control">
-                                <option value="0" class="active" disabled="disabled">Seleccione un Pais</option>
-                                <option>COLOMBIA</option>
+                            <select id="list_ciudad" class="form-control">
+                                <option value="0" class="active" disabled="disabled">Seleccione una Ciudad</option>
+                               
                             </select>
                         </div>
                         <div class="form-group">
@@ -79,3 +95,59 @@
     </div>
 </section>
 
+@section scripts{
+    
+    <script type="text/javascript">
+        $(function () {
+
+
+
+            $("#list_dpt").change(function () {
+               
+                var xid = $(this).val();
+                var xurl = $("#urlCiudades").val();
+
+                $.ajax({
+                    url: xurl,
+                    data: { id: xid },
+                    type:"POST"
+                }).done(function (res) {
+                    if (res.Error != undefined) {
+                        Mensaje(res.Error, icono_mensaje.error, 'Cuneta');
+                    } else
+                    {
+                        var lista = res.xlista;
+
+                        $("#list_ciudad option").remove();
+
+                        var opciones = "";
+
+
+
+                        for (var i = 0; i < lista.length; i++) {
+
+                            opciones = '<option value="' + lista[i].Id + '">' + lista[i].StrNombre + '</option>';
+
+                            $("#list_ciudad").append(opciones);
+
+                            opciones = "";
+                        }
+
+                        
+
+                    }
+                }).fail(function (error) {
+                    alert(error.error);
+                });
+
+
+            });
+
+           
+
+        });
+
+        
+    </script>
+    
+}

@@ -132,3 +132,38 @@
                 background-color: #464c51;
                 color: #fff;
             }
+
+.div-preload  {
+
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:rgba(0, 0, 0, 0.5);
+    z-index:99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 1000ms ease-in;
+    pointer-events: none;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.div-preload div {
+        width:550px;
+        height: 350px;
+        position: relative;
+        margin: 10% auto;
+        /*padding: 5px 20px 13px 20px;*/
+        border-radius: 10px;
+        text-align:center;
+}
+
+    .div-preload div h2 {
+
+        line-height:15;
+        color:#fff;
+        
+    }

@@ -150,6 +150,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\DataHelper.cs" />
+    <Compile Include="Clases\MaestrosDao.cs" />
     <Compile Include="Clases\SeguridadDao.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MaestrosController.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Maestros.cs" />
     <Compile Include="Models\pedidos_modelo.cs" />
     <Compile Include="Models\Seguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

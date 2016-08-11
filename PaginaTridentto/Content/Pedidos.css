@@ -1,4 +1,7 @@
-﻿.item-compra-carrito {
+﻿section {
+     font-family: 'Quicksand', sans-serif;
+}
+.item-compra-carrito {
     border-bottom:1px solid #ff5600;
     margin-bottom:30px;
     padding-bottom:15px;
@@ -333,4 +336,111 @@ input[type=checkbox]:checked + label:before {
     border-top:1px solid #ec1000;
     margin-top:20px;
     margin-left:-15px;
+    margin-bottom:25px;
+}
+
+.btn-add-carrito {
+    display:inline-block;
+    width:150px;
+    height:45px;
+    text-align:center;
+    line-height:2.5;
+    background-color:#FF5722;
+    color:#fff;
+    font-size:16px;
+    border-radius:2px;
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+
+    .btn-add-carrito:hover {
+        background-color:#999;
+        color:#fff;
+    }
+
+.div-container-comparte-producto {
+
+}
+     .div-container-comparte-producto p {
+            font-size:14px;
+            color:#ff5600;
+        }
+
+    .div-container-comparte-producto ul {
+        margin:0;
+        padding:0;
+    }
+        .div-container-comparte-producto ul li {
+            float:left;
+            margin-right:5px;
+            display: inline-block;
+            background-color:#cecece
+          
+        }
+            .div-container-comparte-producto ul li a {
+              color:#fff;
+            }
+
+                .div-container-comparte-producto ul li a i {
+                  font-size:20px;
+                  padding:10px;
+                  
+                }
+
+                /*.div-container-comparte-producto ul li a:hover {
+                    background-color:#ff5600;
+                }*/
+
+.div-container-descripcion-producto {
+
+    margin-top:25px;
+
+}
+
+    .div-container-descripcion-producto h2 {
+        font-size:16px;
+        color:#ff5600;
+         font-family: 'Quicksand', sans-serif;
+    }
+
+    .div-container-descripcion-producto p {
+
+        font-family: 'Quicksand', sans-serif;
+        color:#999;
+
+    }
+
+#txt-cantidad-producto {
+    display: inline-block;
+    width: 53px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #d2cbcb;
+    border-radius: 2px;
+}
+
+.ul-descripcion-producto {
+    
+}
+
+    .ul-descripcion-producto li {
+        padding-left:1em;
+        text-indent:-.5em;
+        list-style:none;
+    }
+        .ul-descripcion-producto li::before {
+            content:'\2219';
+            font-size:20px;
+            color:#ff5600;
+            display:inline-block;
+            
+        }
+
+.img-producto-principal {
+    height: 350px;
+    width: 321px;
+    margin-left: 15px;
+    margin-bottom: -35px;
 }

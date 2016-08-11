@@ -77,6 +77,14 @@ namespace PaginaTridentto.Controllers
 
         public ActionResult Cuentas()
         {
+            /*Cargamos Los Departamentos Primero*/
+
+            var vc = new Clases.MaestrosDao();
+
+            var dpt = vc.ListaDepartamentos();
+
+            ViewData["departamentos"] = dpt;
+
             return View();
         }
 
@@ -88,6 +96,28 @@ namespace PaginaTridentto.Controllers
         public ActionResult OrdenesUsuario()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Ciudades(int id)
+        {
+            var vc = new Clases.MaestrosDao();
+
+            var lista = vc.ListaCiudades(id);
+            if (lista != null)
+            {
+                return Json(new
+                {
+                    xlista=lista
+                });
+            }
+            else
+            {
+                return Json(new
+                {
+                    Error = "No hay datos para cargar"
+                });
+            }
         }
     }
 }

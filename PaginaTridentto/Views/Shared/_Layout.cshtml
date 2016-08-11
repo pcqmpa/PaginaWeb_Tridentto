@@ -330,7 +330,11 @@
         </div>
     </div>
 
-
+    <div class="div-preload">
+        <div>
+            <h2>Prueba de Espera</h2>
+        </div>
+    </div>
 
     <script src="~/Scripts/jquery.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
@@ -339,6 +343,15 @@
     <script src="~/Scripts/price-range.js"></script>
     <script src="~/Scripts/main.js"></script>
     <script type="text/javascript">
+
+        $(document).ajaxStart(function () {
+            $(".div-preload").css('opacity', '1');
+        });
+
+        $(document).ajaxStop(function () {
+
+            $(".div-preload").css('opacity', '0');
+        });
 
         $(function () {
 
