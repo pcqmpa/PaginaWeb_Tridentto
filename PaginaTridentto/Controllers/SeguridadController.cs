@@ -163,9 +163,75 @@ namespace PaginaTridentto.Controllers
             
         }
 
+        public ActionResult ConsultaOtrosDatosUsuario(Int64 idUsuario)
+        {
+            var vc = new Clases.MaestrosDao();
+
+            var datos = vc.ConsultaOtrosDatosUsuario(idUsuario);
+
+            if (datos != null)
+            {
+                return Json(new
+                {
+                    xdato = datos
+                });
+            }
+            else
+            {
+                return Json(new
+                {
+                    xdato = string.Empty
+                });
+            }
+        }
+
+        public ActionResult CambioPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CambioPassword(string passNew,string passConfirmar)
+        {
+            var vc = new Clases.SeguridadDao();
+
+            var validar = passNew.Equals(passConfirmar);
+            if (!validar)
+            {
+                return Json(new
+                {
+                    Error = "Los dos Pasword no coinciden"
+                });
+            }
+            else
+            {
+                Int64 idUsuario = Convert.ToInt64(Session["idUsuario"]);
+
+                var res = vc.CambioPassword(idUsuario, passNew, out _strMensaje);
+
+                if (res)
+                {
+                    return Json(new
+                    {
+                        mensaje = _strMensaje
+                    });
+                }
+                else
+                {
+                    return Json(new
+                    {
+                        Error = _strMensaje
+                    });
+                }
+            }
+
+         
+            
+        }
 
         public ActionResult Direcciones()
         {
+
             return View();
         }
 

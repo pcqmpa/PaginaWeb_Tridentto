@@ -315,6 +315,7 @@
     <Content Include="Views\Pedidos\Carro_Compras.cshtml" />
     <Content Include="Views\Pedidos\ConfirmarDireccion.cshtml" />
     <Content Include="Views\Pedidos\AddProducto.cshtml" />
+    <Content Include="Views\Seguridad\CambioPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

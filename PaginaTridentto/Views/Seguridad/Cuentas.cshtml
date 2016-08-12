@@ -11,14 +11,16 @@
         <link href="~/Content/Seguridad.css" rel="stylesheet" />
 
     }
-
+@Html.Hidden("urlOtrosDatos",Url.Action("ConsultaOtrosDatosUsuario","Seguridad"))
 @Html.Hidden("urlCiudades", Url.Action("Ciudades", "Seguridad"))
 @Html.Hidden("urlHome", Url.Action("Index", "Home"))
 @Html.Hidden("urlActualizar",Url.Action("AddOtrosDatosUsuario","Seguridad"))
+@Html.Hidden("urlCambioPass",Url.Action("CambioPassword","Seguridad"))
+
 <section class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="titulo-cuenta">Cuenta|<span id="txt-nombre-usuario-cuenta">Paulo Cesar Quintero</span></h2>
+            <h2 class="titulo-cuenta">Cuenta|<span id="txt-nombre-usuario-cuenta">@ViewBag.nombre</span></h2>
         </div>
     </div>
 
@@ -88,7 +90,7 @@
              
                 <div class="row form-group">
                     <div class="col-md-12">
-                        <button type="button" class="btn form-control btn-info">Cambio de Contraseña</button>
+                        <button type="button" class="btn form-control btn-info" id="btn-cambio-password">Cambio de Contraseña</button>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -109,7 +111,38 @@
     <script type="text/javascript">
         $(function () {
 
+            /*Validamos si tiene datos adicionales y los cargamos*/
+            
 
+            var idUsuario = sessionStorage.getItem("idusuario");
+            var url_otros = $("#urlOtrosDatos").val();
+
+            if (idUsuario != undefined)
+            {
+                $.ajax({
+                    url: url_otros,
+                    data: { idUsuario: idUsuario },
+                    type:"POST"
+                }).done(function (res) {
+
+                    if (res.xdato != "")
+                    {
+                        $("#list_pais").val(res.xdato.IdPais);
+                        $("#list_dpt").val(res.xdato.IdDepartamento);
+
+                        CargarCiudades(res.xdato.IdDepartamento);
+
+
+                        $("#list_ciudad").val(res.xdato.IdCiudad);
+                        $("#StrTelefono").val(res.xdato.StrTelefono);
+                        $("#StrMobil").val(res.xdato.StrMobil);
+                    }
+                    
+
+                }).fail(function (error) {
+                    alert(error.error);
+                });
+            }
 
             $("#list_dpt").change(function () {
                
@@ -204,10 +237,54 @@
 
             });
 
+            $("#btn-cambio-password").click(function () {
+
+                var urlpass = $("#urlCambioPass").val();
+
+                window.location.href = urlpass;
+
+            });
+
 
         });
 
-        
+        function CargarCiudades(id) {
+
+            var xurl = $("#urlCiudades").val();
+
+            $.ajax({
+                url: xurl,
+                data: { id: id },
+                type: "POST"
+            }).done(function (res) {
+                if (res.Error != undefined) {
+                    Mensaje(res.Error, icono_mensaje.error, 'Mi Cuenta');
+                } else {
+                    var lista = res.xlista;
+
+                    $("#list_ciudad option").remove();
+
+                    var opciones = "";
+
+
+
+                    for (var i = 0; i < lista.length; i++) {
+
+                        opciones = '<option value="' + lista[i].Id + '">' + lista[i].StrNombre + '</option>';
+
+                        $("#list_ciudad").append(opciones);
+
+                        opciones = "";
+                    }
+
+
+
+                }
+            }).fail(function (error) {
+                alert(error.error);
+            });
+
+        }
     </script>
     
 }

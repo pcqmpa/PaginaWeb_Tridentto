@@ -118,5 +118,43 @@ namespace PaginaTridentto.Clases
                 return null;
             }
         }
+
+        public bool CambioPassword(Int64 idUsuario,string strPassword,out string strMensaje)
+        {
+            try
+            {
+                var parametros = new List<MySqlParameter>()
+                {
+                    new MySqlParameter("usuario",idUsuario),
+                    new MySqlParameter("pass",strPassword)
+                };
+
+                var mensaje = new MySqlParameter("mensaje", MySqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
+                var log_res = new MySqlParameter("log_respuesta", MySqlDbType.Bit) { Direction = ParameterDirection.Output };
+
+                parametros.Add(mensaje);
+                parametros.Add(log_res);
+
+                var res = _dataHelper.EjecutarSp<int>("sg_spCambioPass", parametros);
+
+                if (res >= 0)
+                {
+                    strMensaje = mensaje.Value.ToString();
+                    return Convert.ToBoolean(log_res.Value);
+                }
+                else
+                {
+                    strMensaje = "No hay conexion con la base de datos";
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                strMensaje = ex.Message;
+                return false;
+               
+            }
+        }
     }
 }

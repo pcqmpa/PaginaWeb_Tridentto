@@ -102,6 +102,7 @@
 
                             var datos = res.datos;
                             
+                            sessionStorage.setItem("idusuario", datos.Id);
                             sessionStorage.setItem("usuario", datos.StrUsuario);
                             sessionStorage.setItem("nombre_usuario", datos.StrNombre);
                             sessionStorage.setItem("idgrupo", datos.IdGrupo);

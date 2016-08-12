@@ -179,5 +179,52 @@ namespace PaginaTridentto.Clases
             }
         
         }
+
+        public DatosComplemenatriosUsuario ConsultaOtrosDatosUsuario(Int64 idUsuario)
+        {
+            try
+            {
+                var parametros = new List<MySqlParameter>()
+                {
+                    new MySqlParameter("usuario",idUsuario)
+                };
+
+                var dt = _dataHelper.EjecutarSp<DataTable>("sg_spConsultaOtros_Datos", parametros);
+
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0) 
+                    {
+
+                        var datos = new DatosComplemenatriosUsuario();
+
+                        datos.IdUsuario = Convert.ToInt64(dt.Rows[0]["idUsuario"]);
+                        datos.IdPais = Convert.ToInt16(dt.Rows[0]["idPais"]);
+                        datos.IdDepartamento = Convert.ToInt16(dt.Rows[0]["idDepartamento"]);
+                        datos.IdCiudad = Convert.ToInt16(dt.Rows[0]["idCiudad"]);
+                        datos.StrTelefono = dt.Rows[0]["strTelefonoFijo"].ToString();
+                        datos.StrMobil = dt.Rows[0]["strMobil"].ToString();
+
+                        return datos;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+
+
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
     }
 }
