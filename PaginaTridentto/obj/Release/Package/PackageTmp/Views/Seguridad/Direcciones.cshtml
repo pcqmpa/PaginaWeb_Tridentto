@@ -1,0 +1,242 @@
+﻿
+@{
+    ViewBag.Title = "Direcciones";
+}
+
+@section css{
+        
+        
+        <link href="~/Content/Seguridad.css" rel="stylesheet" />
+
+    }
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="titulo-cuenta">Mis Direcciones | <span id="txt-nombre-usuario-cuenta">Paulo Cesar Quintero</span></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2" >
+            <ul class="menu-cuenta" data-spy="affix" data-offset-top="60" data-offset-bottom="500">
+                <li><a href="~/Seguridad/Cuentas">MI CUENTA</a></li>
+                <li><a href="~/Seguridad/OrdenesUsuario">MIS ORDENES (2)</a></li>
+                <li class="active"><a href="#">MIS DIRECCIONES(1)</a></li>
+                <li><a href="#">CERRAR SESSION</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-10">
+
+            <div class="btn-add-direccion row">
+                <div class="col-sm-12">
+                  <button class="btn form-control btn-warning" type="button" data-toggle="collapse" data-target="#direccionNueva">Añadir nueva dirección</button>
+                </div>
+            </div>
+
+            <div class="collapse row" id="direccionNueva">
+                <div class="well col-sm-12">
+                    <form method="post" action="" class="row">
+                        
+                            <div class="form-group col-sm-6">
+                                <input class="form-control" type="text" placeholder="Nombre de Quien Recibe" name="strNombreRecibe" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input class="form-control" type="text" placeholder="Apellidos de Quien Recibe" name="strApellidoRecibe" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                
+                                <select class="form-control">
+                                    <option value="0">Tipo de Identificación</option>
+                                    <option value="1">Cedula</option>
+                                    <option value="2">Tarjeta de Identidad</option>
+                                </select>
+                                
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input class="form-control" type="text" placeholder="Numero de Identificacion" name="strIdentificacion" />
+                            </div>
+                            <div class="form-group col-sm-12">
+                               <input type="text"  class="form-control" placeholder="Dirección" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control" placeholder="Telefono" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control" placeholder="Movil" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <select class="form-control">
+                                    <option value="0">PAIS</option>
+                                    <option value="1">COLOMBIA</option>
+                                    <option value="2">ECUADOR</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control" placeholder="Departamento" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control" placeholder="Ciudad" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control" placeholder="Barrio" />
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <input type="text" class="form-control" placeholder="Punto de Referencia(Cerca A..)" />
+                            </div>
+                            
+                        <div class="form-group">
+                            <button type="submit" class="btn form-control btn-warning">Guardar</button>
+                        </div> 
+                       
+                    </form>
+                </div>
+            </div>
+
+            <div class="list-direccion-container row">
+                <div class="col-sm-12">
+                    <ul class="ul-encabezado-direccion">
+                        <li class="ul-encabezado-direccion-titulo">
+                            <h2>Direccion</h2>
+                            <p>Cra 46 # 48C Sur - 51</p>
+                        </li>
+                  
+                     </ul>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ul class="ul-detalle-direccion">
+                            <li>
+                                <h2>Nombre</h2>
+                                <p>Paulo Cesar</p>
+                            </li>
+                            <li>
+                                <h2>Telefono</h2>
+                                <p>4442671</p>
+                            </li>
+                            <li>
+                                <h2>Departamento</h2>
+                                <p>Antioquia</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="ul-detalle-direccion">
+                            <li>
+                                <h2>Apellidos</h2>
+                                <p>Quintero Jimenez</p>
+                            </li>
+                            <li>
+                                <h2>Movil</h2>
+                                <p>3004130210</p>
+                            </li>
+                            <li>
+                                <h2>Ciudad</h2>
+                                <p>Medellin</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="ul-detalle-direccion">
+                            <li>
+                                <h2>Identificacion</h2>
+                                <p>71331806</p>
+                            </li>
+                            <li>
+                                <h2>Pais</h2>
+                                <p>Colombia</p>
+                            </li>
+                            <li>
+                                <h2>Barrio</h2>
+                                <p>Ditaires</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="btn-direccion-detalle row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-warning">Editar</button>
+                        <button type="button" class="btn btn-warning">Eliminar</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="list-direccion-container row">
+                <div class="col-sm-12">
+                    <ul class="ul-encabezado-direccion">
+                        <li class="ul-encabezado-direccion-titulo">
+                            <h2>Direccion</h2>
+                            <p>Cra 46 # 48C Sur - 51</p>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ul class="ul-detalle-direccion">
+                            <li>
+                                <h2>Nombre</h2>
+                                <p>Paulo Cesar</p>
+                            </li>
+                            <li>
+                                <h2>Telefono</h2>
+                                <p>4442671</p>
+                            </li>
+                            <li>
+                                <h2>Departamento</h2>
+                                <p>Antioquia</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="ul-detalle-direccion">
+                            <li>
+                                <h2>Apellidos</h2>
+                                <p>Quintero Jimenez</p>
+                            </li>
+                            <li>
+                                <h2>Movil</h2>
+                                <p>3004130210</p>
+                            </li>
+                            <li>
+                                <h2>Ciudad</h2>
+                                <p>Medellin</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="ul-detalle-direccion">
+                            <li>
+                                <h2>Identificacion</h2>
+                                <p>71331806</p>
+                            </li>
+                            <li>
+                                <h2>Pais</h2>
+                                <p>Colombia</p>
+                            </li>
+                            <li>
+                                <h2>Barrio</h2>
+                                <p>Ditaires</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="btn-direccion-detalle row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-warning">Editar</button>
+                        <button type="button" class="btn btn-warning">Eliminar</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+

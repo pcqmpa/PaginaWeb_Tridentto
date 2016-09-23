@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = "Carro_Compras";
+}
+
+@section css{
+<link href="~/Content/Seguridad.css" rel="stylesheet" />
+
+        <link href="~/Content/Pedidos.css" rel="stylesheet" />
+
+    }
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12">
+             <h2 class="titulo-cuenta">Carro de Compras | <span id="txt-unidades">3</span> <span>Productos Agregados</span></h2>
+            <div class="divider" style="border-bottom:1px solid #FF9800; margin-bottom:20px;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <article class="item-compra-carrito">
+                <div class="row">
+                    <a class="cont-imagen col-sm-4" href="#">
+                        <figure>
+                            <img src="~/Imagenes/home/gallery2.jpg" />
+                        </figure>
+                    </a>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <a href="#" class="titulo-producto-item">
+                                    <h2>Nombre del Producto</h2>
+                                    <h3>Ref:052336</h3>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm12">
+                                <h4 class="item-precio-carrito">$52.000</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="item-tallas-carrito">
+                                    <li class="checkbox-propio">
+                                        <h5>Talla</h5>
+                                        <div class="checkbox-content">
+                                            <input id="check1" type="checkbox" name="check" value="check1" checked disabled>
+                                            <label for="check1">s</label>
+                                        </div>
+                                    </li>
+                                    <li class="checkbox-propio">
+                                        <h5>Color</h5>
+                                        <div class="checkbox-content">
+                                            <input id="check2" type="checkbox" name="check-1" value="check1" checked disabled>
+                                            <label for="check2">
+                                                <span class="color-producto-carrito"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="ul-cantidad-item-pedido">
+                                    <li class="info-cantidad">
+                                        <h5>Cantidad</h5>
+                                        <a href="#"><span class="glyphicon-plus"></span></a>
+                                        <input type="text" value="1" />
+                                        <a href="#"><span class="glyphicon-minus"></span></a>
+                                    </li>
+                                    <li class="total-carrito-item">
+                                        Total=<span>$52.000</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <a class="btn-eliminar-item-carrito" href="#">Eliminar</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+            <article class="item-compra-carrito col-sm-10">
+                <div class="row">
+                    <a class="cont-imagen col-sm-4" href="#">
+                        <figure>
+                            <img src="~/Imagenes/home/gallery2.jpg" />
+                        </figure>
+                    </a>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <a href="#" class="titulo-producto-item">
+                                    <h2>Nombre del Producto</h2>
+                                    <h3>Ref:052336</h3>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm12">
+                                <h4 class="item-precio-carrito">$52.000</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="item-tallas-carrito">
+                                    <li class="checkbox-propio">
+                                        <h5>Talla</h5>
+                                        <div class="checkbox-content">
+                                            <input id="check1" type="checkbox" name="check" value="check1" checked disabled>
+                                            <label for="check1">s</label>
+                                        </div>
+                                    </li>
+                                    <li class="checkbox-propio">
+                                        <h5>Color</h5>
+                                        <div class="checkbox-content">
+                                            <input id="check2" type="checkbox" name="check-1" value="check1" checked disabled>
+                                            <label for="check2">
+                                                <span class="color-producto-carrito"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="ul-cantidad-item-pedido">
+                                    <li class="info-cantidad">
+                                        <h5>Cantidad</h5>
+                                        <a href="#"><span class="glyphicon-plus"></span></a>
+                                        <input type="text" value="1" />
+                                        <a href="#"><span class="glyphicon-minus"></span></a>
+                                    </li>
+                                    <li class="total-carrito-item">
+                                        Total=<span>$52.000</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <a class="btn-eliminar-item-carrito" href="#">Eliminar</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+        </div>   
+        <div class="col-sm-4" data-spy="affix" data-offset-top="60" data-offset-bottom="500">
+            <div class="row" style="margin-left:15%">
+                <div class="div-container-pago-carrito col-sm-12">
+                    <ul class="ul-totales-carrito-pagar">
+                        <li>
+                            <h5>SUBTOTAL</h5>
+                            <p>$106.000</p>
+                        </li>
+                        <li>
+                            <h5>IVA</h5>
+                            <p>$0</p>
+                        </li>
+                        <li>
+                            <h5>TOTAL</h5>
+                            <p>$106.000</p>
+                        </li>
+                    </ul>
+                    <div class="div-divider-carrito-totales">
+                        <p>
+                            *Por favor verificar con detalle los productos,tallas,colores y cantidad de estos antes de proceder con su compra. Gracias
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-pagar-carrito-continuar row">
+                <a id="btn-pagar-carrito" href="~/Pedidos/ConfirmarDireccion">Pagar Ahora</a>
+                <br />
+                <a id="btn-continuar-comprando" href="#">Continuar comprando</a>
+            </div>
+        </div>  
+    </div>
+
+</section>
+

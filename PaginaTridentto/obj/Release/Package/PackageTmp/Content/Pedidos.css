@@ -1,0 +1,446 @@
+﻿section {
+     font-family: 'Quicksand', sans-serif;
+}
+.item-compra-carrito {
+    border-bottom:1px solid #ff5600;
+    margin-bottom:30px;
+    padding-bottom:15px;
+    width:100%;
+}
+
+.cont-imagen {
+    width:190px;
+    margin-bottom:15px;
+}
+
+    .cont-imagen figure image {
+        width:190px;
+        height:252px;
+
+    }
+
+.titulo-producto-item {
+
+
+}
+    .titulo-producto-item h2 {
+
+        color:#808080;
+        margin:0;
+    }
+
+    .titulo-producto-item h3 {
+        color:#ff5600;
+        margin:0;
+        font-size:16px
+    }
+
+.item-precio-carrito {
+    color:#ff5600;
+    font-size:24px;
+    font-weight:unset;
+    margin-left:15px;
+}
+
+.item-tallas-carrito {
+    margin:0;
+    padding:0;
+}
+    .item-tallas-carrito li {
+            
+    }
+        .item-tallas-carrito li label {
+
+        }
+
+
+/*.checkbox-propio {
+}
+
+    .checkbox-propio h5 {
+        font-size: 16px;
+        color: #999;
+        margin: 0;
+    }
+
+    .checkbox-propio label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        margin-right: 15px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .checkbox-propio input[type=checkbox] {
+        display:none;
+    }
+
+    .checkbox-propio label:before {
+        content: "";
+        display: inline-block;
+
+        width: 16px;
+        height: 16px;
+
+        margin-right: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background-color: #aaa;
+        box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+        border-radius: 3px;
+    }
+
+    .checkbox-propio input[type=checkbox] + label:before {
+        content:"\2713";
+        text-shadow:1px 1px 1px rgba(0,0,0,.2);
+        font-size:18px;
+        color:#f3f3f3;
+        text-align:center;
+        line-height:15px;
+    }*/
+
+/*Prueba de Check box*/
+
+.checkbox-propio {
+    float:left;
+    margin-right: 90px;
+}
+
+.checkbox-propio h5 {
+        font-size: 16px;
+        color: #999;
+        margin: 0;
+    }
+
+label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	font-size: 30px;
+    padding-left:5px;
+    line-height:1;
+    font-weight:200;
+
+}
+input[type=radio],
+input[type=checkbox] {
+	display: none;
+}
+label:before {
+	content: "";
+	display: inline-block;
+
+	width: 100px;
+	height: 30px;
+
+	margin-right: 15px;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+    /*border:1px solid;*/
+    padding-right:5px;
+	background-color: rgba(239, 239, 239, 0.40);
+	/*box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/
+}
+
+.radio label:before {
+	border-radius: 8px;
+}
+.checkbox-content label {
+	margin-bottom: 15px;
+}
+.checkbox-content label:before {
+    border-radius: 3px;
+}
+
+input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #f3f3f3;
+    font-size: 30px;
+    text-align: center;
+    line-height: 18px;
+}
+
+input[type=checkbox]:checked + label:before {
+	content: "\2713";
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.66);
+	font-size: 25px;
+	color: #ff5600;
+	text-align: right;
+    line-height: 25px;
+  
+
+}
+.color-producto-carrito {
+    display:inline-block;
+    height:30px;
+    width:30px;
+    background-color:#0693c1;
+    border:1px solid rgba(128, 128, 128, 0.49);
+    line-height:1;
+    vertical-align:middle;
+}
+
+/*Cantidad */
+
+.ul-cantidad-item-pedido {
+    margin:0;
+    padding:0;
+}
+
+    .ul-cantidad-item-pedido h5 {
+        color:#808080;
+    }
+
+.ul-cantidad-item-pedido li {
+    float:left;
+    margin-right:25px;
+    position:relative;
+    height:70px;
+}
+
+    .ul-cantidad-item-pedido li input[type=text] {
+        width: 55px;
+        height: 32px;
+        /* border-radius: 3px; */
+        border: 1px solid #d8d5d5;
+        text-align: center;
+    }
+
+    .ul-cantidad-item-pedido li a {
+        border: 1px solid #c3c3c3;
+        display: inline-block;
+        width: 25px;
+        height: 32px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.5;
+        font-size: 20px;
+        color: #FF5722;
+    }
+
+.total-carrito-item {
+    color:#999;
+}
+    .total-carrito-item span {
+        display:inline-block;
+        margin-left:10px;
+        margin-top:30px;
+        font-size:25px;
+        color:#ff5600;
+    }
+.btn-eliminar-item-carrito {
+    display: inline-block;
+    border: 1px solid #999;
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 16px;
+    background-color: #999;
+    color: #fff;
+    transition:.5s;
+}
+
+    .btn-eliminar-item-carrito:hover {
+        background-color:#ff5600;
+    }
+
+.div-container-pago-carrito {
+        /* border: 1px solid #999; */
+    width: 225px;
+    text-align: center;
+    /* vertical-align: middle; */
+    padding: 15px;
+    background-color: rgba(232, 232, 232, 0.55);
+}
+.ul-totales-carrito-pagar {
+    margin:0;
+    padding:0;
+}
+
+.ul-totales-carrito-pagar li {
+    margin:0;
+    padding:0;
+}
+
+    .ul-totales-carrito-pagar li h5 {
+        margin:0;
+        padding:0;
+        font-size:18px;
+        color:#808080
+    }
+
+    .ul-totales-carrito-pagar li p {
+        margin:0;
+        font-size:25px;
+        color:#a09e9e;
+    }
+
+.div-divider-carrito-totales {
+    margin-top:15px;
+    border-top:1px solid #ff5600;
+    padding-top:10px;
+    border-bottom:1px solid #ff5600;
+    color:#FF5722;
+}
+.btn-pagar-carrito-continuar {
+    margin-left:15%;
+}
+
+#btn-pagar-carrito {
+    display: inline-block;
+    height: 40px;
+    width: 70%;
+    background-color: #FF5722;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 18px;
+    color: #fff;
+}
+
+    #btn-pagar-carrito:hover {
+        background-color:#b7b7b7;
+        color:#fff;
+    }
+
+#btn-continuar-comprando {
+    display: inline-block;
+    height: 40px;
+    width: 70%;
+    background-color: #929292;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 18px;
+    color: #fff;
+}
+    #btn-continuar-comprando:hover {
+
+        background-color:#ff5600;
+        color:#fff;
+    }
+
+/*Diseño Producto Pedido*/
+.div-divider-producto {
+    height:0;
+    border-top:1px solid #ec1000;
+    margin-top:20px;
+    margin-left:-15px;
+    margin-bottom:25px;
+}
+
+.btn-add-carrito {
+    display:inline-block;
+    width:150px;
+    height:45px;
+    text-align:center;
+    line-height:2.5;
+    background-color:#FF5722;
+    color:#fff;
+    font-size:16px;
+    border-radius:2px;
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+
+    .btn-add-carrito:hover {
+        background-color:#999;
+        color:#fff;
+    }
+
+.div-container-comparte-producto {
+
+}
+     .div-container-comparte-producto p {
+            font-size:14px;
+            color:#ff5600;
+        }
+
+    .div-container-comparte-producto ul {
+        margin:0;
+        padding:0;
+    }
+        .div-container-comparte-producto ul li {
+            float:left;
+            margin-right:5px;
+            display: inline-block;
+            background-color:#cecece
+          
+        }
+            .div-container-comparte-producto ul li a {
+              color:#fff;
+            }
+
+                .div-container-comparte-producto ul li a i {
+                  font-size:20px;
+                  padding:10px;
+                  
+                }
+
+                /*.div-container-comparte-producto ul li a:hover {
+                    background-color:#ff5600;
+                }*/
+
+.div-container-descripcion-producto {
+
+    margin-top:25px;
+
+}
+
+    .div-container-descripcion-producto h2 {
+        font-size:16px;
+        color:#ff5600;
+         font-family: 'Quicksand', sans-serif;
+    }
+
+    .div-container-descripcion-producto p {
+
+        font-family: 'Quicksand', sans-serif;
+        color:#999;
+
+    }
+
+#txt-cantidad-producto {
+    display: inline-block;
+    width: 53px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #d2cbcb;
+    border-radius: 2px;
+}
+
+.ul-descripcion-producto {
+    
+}
+
+    .ul-descripcion-producto li {
+        padding-left:1em;
+        text-indent:-.5em;
+        list-style:none;
+    }
+        .ul-descripcion-producto li::before {
+            content:'\2219';
+            font-size:20px;
+            color:#ff5600;
+            display:inline-block;
+            
+        }
+
+.img-producto-principal {
+    height: 350px;
+    width: 321px;
+    margin-left: 15px;
+    margin-bottom: -35px;
+}

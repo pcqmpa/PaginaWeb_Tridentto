@@ -58,19 +58,29 @@ namespace PaginaTridentto.Controllers
             var vc = new Clases.SeguridadDao();
             var datos = vc.ValidarUsuario(usuario, password, out _strMensaje);
 
-            Session["idUsuario"] = datos.Id;
-            Session["usuario"] = datos.StrUsuario;
-            Session["nombre"] = datos.StrNombre;
-            Session["email"] = datos.StrEmail;
-            Session["grupo"] = datos.IdGrupo;
-
-
             if (datos != null)
             {
-                return Json(new
+                Session["idUsuario"] = datos.Id;
+                Session["usuario"] = datos.StrUsuario;
+                Session["nombre"] = datos.StrNombre;
+                Session["email"] = datos.StrEmail;
+                Session["grupo"] = datos.IdGrupo;
+
+
+                if (datos != null)
                 {
-                    datos=datos
-                });
+                    return Json(new
+                    {
+                        datos = datos
+                    });
+                }
+                else
+                {
+                    return Json(new
+                    {
+                        Error = _strMensaje
+                    });
+                }
             }
             else
             {
@@ -79,6 +89,8 @@ namespace PaginaTridentto.Controllers
                     Error = _strMensaje
                 });
             }
+
+           
 
         }
 

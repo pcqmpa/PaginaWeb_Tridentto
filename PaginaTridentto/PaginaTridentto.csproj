@@ -211,12 +211,16 @@
     <Content Include="Imagenes\home\iframe3.png" />
     <Content Include="Imagenes\home\iframe4.png" />
     <Content Include="Imagenes\home\logo.png" />
+    <Content Include="Imagenes\home\logo_payu.png" />
     <Content Include="Imagenes\home\map.png" />
     <Content Include="Imagenes\home\new.png" />
+    <Content Include="Imagenes\home\pagos_logos.png" />
     <Content Include="Imagenes\home\partner1.png" />
     <Content Include="Imagenes\home\partner2.png" />
     <Content Include="Imagenes\home\partner3.png" />
     <Content Include="Imagenes\home\partner4.png" />
+    <Content Include="Imagenes\home\payment_cash.svg" />
+    <Content Include="Imagenes\home\payulatam.png" />
     <Content Include="Imagenes\home\pricing.png" />
     <Content Include="Imagenes\home\product1.jpg" />
     <Content Include="Imagenes\home\product2.jpg" />
@@ -234,6 +238,7 @@
     <Content Include="Imagenes\Logos\LogoNaranja.png" />
     <Content Include="Imagenes\Logos\Logo_completo.png" />
     <Content Include="Imagenes\Logos\Logo_Iniciales.png" />
+    <Content Include="Imagenes\home\payment.png" />
     <Content Include="Imagenes\product-details\1.jpg" />
     <Content Include="Imagenes\product-details\new.jpg" />
     <Content Include="Imagenes\product-details\rating.png" />

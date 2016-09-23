@@ -1,8 +1,13 @@
-﻿
+﻿@model  PaginaTridentto.Models.Usuario
 @{
     ViewBag.Title = "Login";
+
+
 }
 
+@Html.Hidden("mensaje",(string)ViewBag.mensaje)
+@Html.Hidden("Error",(string)ViewBag.Error)
+@Html.Hidden("urllogin",Url.Action("ValidarUser","Seguridad"))
 
 <section id="form">
     <!--form-->
@@ -12,14 +17,14 @@
                 <div class="login-form">
                     <!--login form-->
                     <h2>Ingrese a su cuenta</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Nombre" />
-                        <input type="email" placeholder="Email" />
+                    <form action="#" method="post">
+                        <input id="txt-email-login" type="email" placeholder="Email" />
+                        <input id="txt-password-login" type="password" placeholder="Password" />
                         <span>
                             <input type="checkbox" class="checkbox">
                            Recordar registro
                         </span>
-                        <button type="submit" class="btn btn-default">Login</button>
+                        <button id="btn-login" type="button" class="btn btn-default">Login</button>
                     </form>
                 </div><!--/login form-->
             </div>
@@ -30,10 +35,10 @@
                 <div class="signup-form">
                     <!--sign up form-->
                     <h2>Nuevo Usuario</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Nombre" />
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+                    <form action="~/Seguridad/Index" method="post">
+                        <input type="text" placeholder="Nombre" name="StrNombre" />
+                        <input type="email" placeholder="Email" name="StrEmail" />
+                        <input type="password" placeholder="Password" name="StrPassword" />
                         <button type="submit" class="btn btn-default">Guardar</button>
                     </form>
                 </div><!--/sign up form-->
@@ -41,3 +46,81 @@
         </div>
     </div>
 </section><!--/form-->
+
+@section scripts{
+        
+        <script type="text/javascript">
+            $(function () {
+                var mensaje = $("#mensaje").val();
+                var error = $("#Error").val();
+
+                if (mensaje != "") {
+                            
+                    Mensaje(mensaje, icono_mensaje.ok, 'Usuarios');
+                    $("#mensaje").val("");
+                }
+
+                if (error != "") {
+
+                    Mensaje(error, icono_mensaje.error, 'Usuarios');
+                    $("#Error").val("");
+                }
+
+                $(".btn-modal-aceptar").on("click", function () {
+
+                    $(".modal-mensaje").css('opacity', '0');
+                    $(".modal-mensaje").css('pointer-events', '');
+
+                });
+
+                $(".btn-modal-cancelar").on("click", function () {
+
+                    $(".modal-mensaje").css('opacity', '0');
+                    $(".modal-mensaje").css('pointer-events', '');
+
+                });
+
+                $("#btn-login").click(function () {
+                    
+                    var url = $("#urllogin").val();
+                    var usuario = $("#txt-email-login").val();
+                    var pass = $("#txt-password-login").val();
+                    
+
+                    $.ajax({
+                        url: url,
+                        data: { usuario: usuario, password: pass },
+                        type:"POST"
+                    }).done(function (res) {
+
+                        if (res.Error != undefined)
+                        {
+                            Mensaje(res.Error, icono_mensaje.error, 'Validado Usuario');
+
+                        } else {
+
+
+                            var datos = res.datos;
+                            
+                            sessionStorage.setItem("idusuario", datos.Id);
+                            sessionStorage.setItem("usuario", datos.StrUsuario);
+                            sessionStorage.setItem("nombre_usuario", datos.StrNombre);
+                            sessionStorage.setItem("idgrupo", datos.IdGrupo);
+
+                            $("#txt-usuario-header").html(datos.StrNombre);
+
+                            Mensaje("El Usuario " + datos.StrNombre + "A Ingresado a nuestra plataforma bienvenido" , icono_mensaje.error, 'Validado Usuario');
+
+                        }
+
+                    }).fail(function (error) {
+
+                        alert(error.error);
+                    });
+
+                });
+
+            });
+        </script>
+
+    }

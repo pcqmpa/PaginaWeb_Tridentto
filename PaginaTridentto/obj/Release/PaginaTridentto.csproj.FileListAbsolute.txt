@@ -58,3 +58,4 @@ F:\Tridentto\PaginaTridentto\PaginaTridentto\bin\es\System.Web.WebPages.Razor.re
 F:\Tridentto\PaginaTridentto\PaginaTridentto\obj\Release\PaginaTridentto.csprojResolveAssemblyReference.cache
 F:\Tridentto\PaginaTridentto\PaginaTridentto\obj\Release\PaginaTridentto.dll
 F:\Tridentto\PaginaTridentto\PaginaTridentto\obj\Release\PaginaTridentto.pdb
+F:\Tridentto\PaginaTridentto\PaginaTridentto\bin\MySql.Data.dll

@@ -6,12 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>TRIDENTTO @ViewBag.title</title>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/prettyPhoto.css" rel="stylesheet" />
     <link href="~/Content/animate.css" rel="stylesheet" />
     <link href="~/Content/main.css" rel="stylesheet" />
     <link href="~/Content/responsive.css" rel="stylesheet" />
+    <link href="~/Content/mensaje-modal.css" rel="stylesheet" />
+    @RenderSection("css",required:false)
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -86,9 +89,8 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Cuenta</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Lista</a></li>
-                                <li><a href="~/Pedidos/Index"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+                                <li><a href="~/Seguridad/Cuentas"><i class="fa fa-user"></i> <span id="txt-usuario-header">Cuenta</span></a></li>
+                                <li><a href="~/Pedidos/Carro_Compras"><i class="fa fa-shopping-cart"></i> Carrito(<span>0</span>)</a></li>
                                 <li><a href="~/Seguridad/Index"><i class="fa fa-lock"></i> Login</a></li>
                             </ul>
                         </div>
@@ -303,6 +305,36 @@
     </footer><!--/Footer-->
 
 
+    <div id="mensaje-modal" class="modal-mensaje">
+        <div>
+            <a href="#close" title="Close" class="modal-close">X</a>
+            <div class="div-header-modal-mensaje">
+                <p>Mensaje Interno</p>
+            </div>
+            <div class="div-body-modal-mensaje">
+                <div class="modal-mensaje-body">
+                    <p id="txt-titulo-mensaje-modal">Titulo</p>
+                    <p id="txt-mensaje-modal"></p>
+                </div>
+                <div class="modal-icono">
+                    <span id="icono-mensaje-modal" class="glyphicon glyphicon-ok"></span>
+                </div>
+            </div>
+            <div class="div-footer-modal-mensaje">
+                <div class="modal-button">
+                    <button class="btn-modal-aceptar">Aceptar <span class="glyphicon glyphicon-ok"></span></button>
+                    <button class="btn-modal-cancelar">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="div-preload">
+        <div>
+            <h2>Prueba de Espera</h2>
+        </div>
+    </div>
 
     <script src="~/Scripts/jquery.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
@@ -310,8 +342,59 @@
     <script src="~/Scripts/jquery.prettyPhoto.js"></script>
     <script src="~/Scripts/price-range.js"></script>
     <script src="~/Scripts/main.js"></script>
+    <script type="text/javascript">
 
-    @RenderSection("scripts", required:false)
+        $(document).ajaxStart(function () {
+            $(".div-preload").css('opacity', '1');
+        });
+
+        $(document).ajaxStop(function () {
+
+            $(".div-preload").css('opacity', '0');
+        });
+
+        $(function () {
+
+            var nombre_usuario = sessionStorage.getItem("nombre_usuario");
+
+            if (nombre_usuario != undefined) {
+
+                $("#txt-usuario-header").html(nombre_usuario);
+            }
+
+            $(".modal-close").on("click", function () {
+                $(".modal-mensaje").css('opacity', '0');
+                $(".modal-mensaje").css('pointer-events', '');
+            });
+
+
+
+        });
+
+        var icono_mensaje=
+        {
+            error: "glyphicon glyphicon-remove",
+            ok: "glyphicon glyphicon-ok",
+            info: "glyphicon glyphicon-info-sign",
+            question: "glyphicon glyphicon-question-sign",
+            alerta: "glyphicon glyphicon-warning-sign"
+        }
+
+        function Mensaje(mensaje,icono,titulo)
+        {
+            $(".modal-mensaje").css('opacity', '1');
+            $(".modal-mensaje").css('pointer-events', 'auto');
+
+            $("#txt-mensaje-modal").html(mensaje);
+            $("#txt-titulo-mensaje-modal").html(titulo);
+            $("#icono-mensaje-modal").attr('class', '');
+            $("#icono-mensaje-modal").addClass(icono);
+        }
+
+
+    </script>
+
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
